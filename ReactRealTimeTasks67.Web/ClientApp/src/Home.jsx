@@ -12,7 +12,6 @@ const Home = () => {
     const [task, setTask] = useState({ title: '' })
 
     useEffect(() => {
-
         const getTasks = async () => {
             const { data } = await axios.get('/api/task/gettasks')
             setTasks(data)
@@ -28,17 +27,13 @@ const Home = () => {
                 setTasks(task => [...task, t])
             })
             connection.on("deleteTaskFromAll", taskId => {
-            
                 setTasks(oldList => oldList.filter(task => task.id != taskId))
-              console.log(oldList)
             })
             connection.on("updateTaskForAll", updatedList => {
                 setTasks(updatedList)
             })
         }
         connectToHub();
-
-
     }, [])
 
     const onAddClick = async () => {
@@ -51,14 +46,11 @@ const Home = () => {
         setTask(copy)
     }
     const onUpdate = async (taskId) => {
-
         await axios.post('/api/task/updateTask', { taskId })
     }
     const onDelete = async (taskId) => {
         await axios.post('/api/task/deleteTask', { taskId })
     }
-
-
 
     return (
         <div className="container" style={{ marginTop: 80 }}>
@@ -96,12 +88,10 @@ const Home = () => {
                                     <button className="btn btn-warning" disabled>{t.user.firstName} {t.user.lastName} is doing this one!</button>}
                             </td>
                         </tr>)}
-
                     </tbody>
                 </table>
             </div>
         </div>
-
     )
 }
 export default Home;

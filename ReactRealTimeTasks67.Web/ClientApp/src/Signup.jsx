@@ -17,7 +17,6 @@ const Signup = () => {
     setSignupUser(copy);
   }
 
-
   const onSubmit = async e => {
     e.preventDefault();
     await axios.post('/api/account/signup', signupUser)
@@ -76,7 +75,6 @@ const Signup = () => {
         </div>
       </main>
     </div>
-
   )
 }
 export default Signup

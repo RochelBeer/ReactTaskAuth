@@ -24,8 +24,7 @@ const Login = () => {
         if (isValid) {
             setUser(data);
             navigate("/");
-        }
-      
+        }      
     }
 
     return (
@@ -60,7 +59,6 @@ const Login = () => {
                 <Link to="/signup">Sign up for a new account</Link>
             </div>
         </div>
-
     )
 }
 export default Login

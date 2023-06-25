@@ -5,11 +5,10 @@ const Layout = ({ children }) => {
     const { user } = useAuth();
 
     return (
-
         <div>
             <nav className="navbar navbar-expand-sm navbar-dark fixed-top bg-dark border-bottom box-shadow">
                 <div className="container">
-                    <a className="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">React People Cars</a>
+                    <a className="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Tasks</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -37,18 +36,14 @@ const Layout = ({ children }) => {
                                         Logout
                                     </Link>
                                 </li>
-                               
                             </>}
                         </ul>
                     </div>
                 </div>
             </nav>
-
-
             <div className="container" style={{ marginTop: 60 }}>
                 {children}
             </div>
-
         </div>
     )
 }
